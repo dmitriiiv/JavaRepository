@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        .line {
+            font-size: 80%
+        }
+    </style>
+    <title>Logger file</title>
+</head>
+<body bgcolor="#f5f5dc">
+<h2 align="center">LOGGER FILE</h2>
+<table border="1" width="100%" cellspacing="0" cellpadding="5">
+    <tr bgcolor="#f0f8ff">
+        <th>Date</th>
+        <th>Level</th>
+        <th>Class</th>
+        <th>Method</th>
+        <th>Message</th>
+        <th>Thrown message</th>
+        <th width="40%">StackTrace</th>
+    </tr>
+    <tr class="line" bgcolor="#009800">
+        <th>Sun Jun 21 15:52:27 BRT 2015</th>
+        <th>INFO</th>
+        <th>task36.HtmlFormatter</th>
+        <th>&nbsp;</th>
+        <th>Logger is started</th>
+        <th>&nbsp;</th>
+        <th align="left">
+        </th>
+    </tr>
+    <tr class="line" bgcolor="#ff6347">
+        <th>Sun Jun 21 15:52:27 BRT 2015</th>
+        <th>ERROR</th>
+        <th>task36.TaskTest</th>
+        <th>main</th>
+        <th>Logger message about exception</th>
+        <th>Message in exception</th>
+        <th align="left">
+            java.lang.Exception: Message in exception<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;task36.TaskTest.main(TaskTest.java:12)<br/>
+        </th>
+    </tr>
+    <tr class="line" bgcolor="#ff6347">
+        <th>Sun Jun 21 15:52:27 BRT 2015</th>
+        <th>ERROR</th>
+        <th>task36.HtmlLogger</th>
+        <th>getError</th>
+        <th>This is first error</th>
+        <th>1</th>
+        <th align="left">
+            java.lang.ArrayIndexOutOfBoundsException: 1<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;task36.HtmlLogger.getError(HtmlLogger.java:57)<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;task36.TaskTest.main(TaskTest.java:16)<br/>
+        </th>
+    </tr>
+    <tr class="line" bgcolor="#ff6347">
+        <th>Sun Jun 21 15:52:27 BRT 2015</th>
+        <th>ERROR</th>
+        <th>task36.HtmlFormatter</th>
+        <th>getError</th>
+        <th>This is second error</th>
+        <th>Exception</th>
+        <th align="left">
+            java.lang.Exception: Exception<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;task36.HtmlFormatter.getError(HtmlFormatter.java:125)<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;task36.HtmlFormatter.getSecondError(HtmlFormatter.java:121)<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;task36.HtmlLogger.getSecondError(HtmlLogger.java:65)<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;task36.TaskTest.main(TaskTest.java:18)<br/>
+        </th>
+    </tr>
+    <tr class="line" bgcolor="#FFCC35">
+        <th>Sun Jun 21 15:52:27 BRT 2015</th>
+        <th>WARNING</th>
+        <th>task36.HtmlFormatter</th>
+        <th>&nbsp;</th>
+        <th>Logger is stopped</th>
+        <th>&nbsp;</th>
+        <th align="left">
+        </th>
+    </tr>
+</table>
+</body>
+</html>
