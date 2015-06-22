@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TaskTest {
     public static void main(String[] args) {
-        STAXParser parser = new STAXParser();
+        StaxParser parser = new StaxParser();
         List<Point> points = parser.parse("./ivanchuk/src/task39/pointXsd.xml");
         for (Point point : points) {
             System.out.println(point);
