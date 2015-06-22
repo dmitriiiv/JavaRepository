@@ -7,9 +7,9 @@ package task40;
 public class TaskTest {
     public static void main(String[] args) {
         XMLTransformer transformer = new XMLTransformer();
-        String directory = "./ivanchuk/src/task40";
-        transformer.transform(directory + "/transformer.xsl",
-                directory + "/pointXsd.xml",
-                directory + "/result.html");
+        String wayXslFile = "./ivanchuk/src/task40/transformer.xsl";
+        String wayXmlFile = "./ivanchuk/src/task40//pointXsd.xml";
+        String wayHtmlFile = "./ivanchuk/src/task40//result.html";
+        transformer.transform(wayXslFile, wayXmlFile, wayHtmlFile);
     }
 }
