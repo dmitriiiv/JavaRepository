@@ -6,6 +6,7 @@ package task36;
 //об ошибке и записывающий его в файл вместе с информацией о дате и времени проишествия.
 
 public class TaskTest {
+
     public static void main(String[] args) {
         HtmlLogger logger = HtmlLogger.getLogger();
         try {
@@ -13,11 +14,23 @@ public class TaskTest {
         } catch (Exception e) {
             logger.addLogRecord(Level.ERROR, "Logger message about exception", e);
         }
-        logger.getError();
-        try {
-            logger.getSecondError();
-        } catch (Exception e) {
-            logger.addLogRecord(Level.ERROR, "This is second error", e);
+        int i = 0;
+        while (true) {
+            try {
+                ExceptionsGenerator.generate();
+            } catch (Exception e) {
+                logger.addLogRecord(Level.ERROR, "Logger message about exception", e);
+            }
+            if (i > 5) {
+                break;
+            }
+            i++;
+            try {
+                logger.addLogRecord(Level.INFO, "Thread sleep 5 sec", null);
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                logger.addLogRecord(Level.ERROR, "Thread not sleep", e);
+            }
         }
         logger.stopLogger();
     }

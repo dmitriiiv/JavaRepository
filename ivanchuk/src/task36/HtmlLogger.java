@@ -21,7 +21,7 @@ public class HtmlLogger {
 
     private void startLogger() {
         writeFile(formatter.getHead(), true);
-        writeFile(formatter.format(Level.INFO, "Logger is started", null), false);
+        addLogRecord(Level.INFO, "Logger is started", null);
     }
 
     private void writeFile(String text, boolean isRewrite) {
@@ -47,21 +47,7 @@ public class HtmlLogger {
     }
 
     public void stopLogger() {
-        writeFile(formatter.format(Level.WARNING, "Logger is stopped", null), false);
+        addLogRecord(Level.WARNING, "Logger is stopped", null);
         writeFile(formatter.getTail(), false);
-    }
-
-    public int getError() {
-        int[] array = {2};
-        try {
-            array[1] = 2;
-        } catch (Exception e) {
-            addLogRecord(Level.ERROR, "This is first error", e);
-        }
-        return array[0];
-    }
-
-    public void getSecondError() throws Exception {
-        formatter.getSecondError();
     }
 }

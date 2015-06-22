@@ -49,26 +49,26 @@ public class HtmlFormatter {
     }
 
     private String getDateCell() {
-        return "\t\t\t<th>" +
+        return "\t\t\t<td align=\"center\">" +
                 new Date() +
-                "</th>\n";
+                "</td>\n";
     }
 
     private String getLevelCell(Level level) {
-        return "\t\t\t<th>" +
+        return "\t\t\t<td align=\"center\">" +
                 level.name() +
-                "</th>\n";
+                "</td>\n";
     }
 
     private String getClassCell(Exception e) {
-        String text = this.getClass().getName();
+        String text = getClass().getName();
         if (e != null) {
             StackTraceElement[] elements = e.getStackTrace();
             text = elements[0].getClassName();
         }
-        return "\t\t\t<th>" +
+        return "\t\t\t<td>" +
                 text +
-                "</th>\n";
+                "</td>\n";
     }
 
     private String getMethodCell(Exception e) {
@@ -77,18 +77,18 @@ public class HtmlFormatter {
             StackTraceElement[] elements = e.getStackTrace();
             text = elements[0].getMethodName();
         }
-        return "\t\t\t<th>" +
+        return "\t\t\t<td>" +
                 text +
-                "</th>\n";
+                "</td>\n";
     }
 
     private String getMessageCell(String message) {
         if (message.length() == 0) {
             message = "&nbsp;";
         }
-        return "\t\t\t<th>" +
+        return "\t\t\t<td>" +
                 message +
-                "</th>\n";
+                "</td>\n";
     }
 
     private String getThrownMessageCell(Exception e) {
@@ -96,9 +96,9 @@ public class HtmlFormatter {
         if (e != null) {
             text = e.getMessage();
         }
-        return "\t\t\t<th>" +
+        return "\t\t\t<td>" +
                 text +
-                "</th>\n";
+                "</td>\n";
     }
 
     private String getStackTraceCell(Exception e) {
@@ -112,16 +112,8 @@ public class HtmlFormatter {
                 stackTrace.append("<br/>\n");
             }
         }
-        return "\t\t\t<th align=\"left\">\n" +
+        return "\t\t\t<td>\n" +
                 stackTrace +
-                "\t\t\t</th>\n";
-    }
-
-    public void getSecondError() throws Exception {
-        getError();
-    }
-
-    private void getError() throws Exception {
-        throw new Exception("Exception");
+                "\t\t\t</td>\n";
     }
 }
