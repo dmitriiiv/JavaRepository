@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pl:schema xmlns:pl="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.it-academy.by"
+           xmlns="http://www.it-academy.by"
+           elementFormDefault="qualified">
+    <pl:element name="plants">
+        <pl:complexType>
+            <pl:sequence>
+                <pl:element name="plaint" type="plantType" maxOccurs="unbounded"/>
+            </pl:sequence>
+        </pl:complexType>
+    </pl:element>
+    <pl:complexType name="plantType">
+        <pl:choice>
+            <pl:element name="tree" type="treeType"/>
+            <pl:element name="bush" type="bushType"/>
+        </pl:choice>
+    </pl:complexType>
+    <pl:complexType name="treeType">
+        <pl:sequence>
+            <pl:element name="name" type="pl:string"/>
+            <pl:element name="height" type="pl:double"/>
+            <pl:element name="type">
+                <pl:simpleType>
+                    <pl:restriction base="pl:string">
+                        <pl:enumeration value="Лиственное"/>
+                        <pl:enumeration value="Хвойное"/>
+                    </pl:restriction>
+                </pl:simpleType>
+            </pl:element>
+        </pl:sequence>
+    </pl:complexType>
+    <pl:complexType name="bushType">
+        <pl:sequence>
+            <pl:element name="name" type="pl:string"/>
+            <pl:element name="height" type="pl:double"/>
+            <pl:element name="branchiness" type="pl:integer"/>
+        </pl:sequence>
+    </pl:complexType>
+</pl:schema>
